@@ -1,11 +1,8 @@
-node('jenkins-slave') {
-    stage('Checkout') {
-        checkout scm
-    }
-    stage('Build'){
-        container('go-agent') {
-            // This is where we build our code.
-		//test
+pipeline {
+    agent any
+    stages {
+        stage("echo") {
+            sh 'echo "Hello Shell!"'
         }
     }
 }
